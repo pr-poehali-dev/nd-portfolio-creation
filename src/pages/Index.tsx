@@ -169,7 +169,7 @@ const Index = () => {
               className="bg-gradient-to-r from-secondary to-secondary/80 hover:opacity-90 transition-opacity gap-2 text-lg px-8"
               asChild
             >
-              <a href="https://t.me/nikolaydemidov" target="_blank" rel="noopener noreferrer">
+              <a href="https://t.me/sky9line" target="_blank" rel="noopener noreferrer">
                 <Icon name="Send" size={24} />
                 Telegram
               </a>
@@ -179,7 +179,7 @@ const Index = () => {
               className="bg-gradient-to-r from-accent to-accent/80 hover:opacity-90 transition-opacity gap-2 text-lg px-8"
               asChild
             >
-              <a href="https://roblox.com/users/nikolaydemidov" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.roblox.com/users/kiwiq_0010/profile" target="_blank" rel="noopener noreferrer">
                 <Icon name="Gamepad2" size={24} />
                 Roblox
               </a>
