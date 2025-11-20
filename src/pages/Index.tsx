@@ -24,12 +24,12 @@ const Index = () => {
     {
       title: "Roblox Games",
       description: "Creative and engaging Roblox game experiences",
-      image: "https://cdn.poehali.dev/projects/92f641b0-c8dd-4721-9949-45c8af8e6964/files/d31b4cd1-00fd-4f72-9690-d95cdc3ff541.jpg"
+      image: "https://cdn.poehali.dev/files/820ad58e-a2bd-49a3-b1cc-94ef2f12ae72.png"
     },
     {
       title: "Game Development",
       description: "Innovative gameplay mechanics and immersive worlds",
-      image: "https://cdn.poehali.dev/projects/92f641b0-c8dd-4721-9949-45c8af8e6964/files/d31b4cd1-00fd-4f72-9690-d95cdc3ff541.jpg"
+      image: "https://cdn.poehali.dev/files/820ad58e-a2bd-49a3-b1cc-94ef2f12ae72.png"
     }
   ];
 
