@@ -1,34 +1,45 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
+import { translations, languageNames, type Language } from "@/translations";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Index = () => {
+  const [language, setLanguage] = useState<Language>('en');
+  const t = translations[language];
+
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const projects = [
     {
-      title: "Interactive Web Apps",
-      description: "Building responsive and dynamic web applications with modern technologies",
+      title: t.projects.card1Title,
+      description: t.projects.card1Desc,
       image: "https://cdn.poehali.dev/files/3a43aa8f-12ab-4429-8db8-652a7b64cd2a.png"
     },
     {
-      title: "Custom Solutions",
-      description: "Tailored web solutions for businesses and creative projects",
+      title: t.projects.card2Title,
+      description: t.projects.card2Desc,
       image: "https://cdn.poehali.dev/files/3a43aa8f-12ab-4429-8db8-652a7b64cd2a.png"
     }
   ];
 
   const games = [
     {
-      title: "Roblox Games",
-      description: "Creative and engaging Roblox game experiences",
+      title: t.games.card1Title,
+      description: t.games.card1Desc,
       image: "https://cdn.poehali.dev/files/820ad58e-a2bd-49a3-b1cc-94ef2f12ae72.png"
     },
     {
-      title: "Game Development",
-      description: "Innovative gameplay mechanics and immersive worlds",
+      title: t.games.card2Title,
+      description: t.games.card2Desc,
       image: "https://cdn.poehali.dev/files/820ad58e-a2bd-49a3-b1cc-94ef2f12ae72.png"
     }
   ];
@@ -41,19 +52,40 @@ const Index = () => {
             <h2 className="text-2xl font-bold bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
               a1rblake
             </h2>
-            <div className="hidden md:flex gap-8">
-              <button onClick={() => scrollToSection('home')} className="text-foreground/80 hover:text-primary transition-colors">
-                Home
-              </button>
-              <button onClick={() => scrollToSection('projects')} className="text-foreground/80 hover:text-primary transition-colors">
-                Projects
-              </button>
-              <button onClick={() => scrollToSection('games')} className="text-foreground/80 hover:text-primary transition-colors">
-                Games
-              </button>
-              <button onClick={() => scrollToSection('contact')} className="text-foreground/80 hover:text-primary transition-colors">
-                Contact
-              </button>
+            <div className="flex items-center gap-4">
+              <div className="hidden md:flex gap-8">
+                <button onClick={() => scrollToSection('home')} className="text-foreground/80 hover:text-primary transition-colors">
+                  {t.nav.home}
+                </button>
+                <button onClick={() => scrollToSection('projects')} className="text-foreground/80 hover:text-primary transition-colors">
+                  {t.nav.projects}
+                </button>
+                <button onClick={() => scrollToSection('games')} className="text-foreground/80 hover:text-primary transition-colors">
+                  {t.nav.games}
+                </button>
+                <button onClick={() => scrollToSection('contact')} className="text-foreground/80 hover:text-primary transition-colors">
+                  {t.nav.contact}
+                </button>
+              </div>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" size="sm" className="gap-2">
+                    <Icon name="Languages" size={16} />
+                    {languageNames[language]}
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  {(Object.keys(languageNames) as Language[]).map((lang) => (
+                    <DropdownMenuItem
+                      key={lang}
+                      onClick={() => setLanguage(lang)}
+                      className={language === lang ? "bg-primary/10" : ""}
+                    >
+                      {languageNames[lang]}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
         </div>
@@ -64,13 +96,13 @@ const Index = () => {
         <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent leading-tight">
-              a1rblake
+              {t.hero.title}
             </h1>
             <p className="text-2xl md:text-3xl text-muted-foreground mb-8 font-light">
-              Game & Web Developer
+              {t.hero.subtitle}
             </p>
             <p className="text-lg md:text-xl text-foreground/70 mb-12 max-w-2xl mx-auto">
-              Creating immersive games and cutting-edge websites. Bringing ideas to life through code and creativity.
+              {t.hero.description}
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Button 
@@ -78,7 +110,7 @@ const Index = () => {
                 className="bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-opacity text-lg px-8"
                 onClick={() => scrollToSection('projects')}
               >
-                View Projects
+                {t.hero.viewProjects}
               </Button>
               <Button 
                 size="lg" 
@@ -86,7 +118,7 @@ const Index = () => {
                 className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8"
                 onClick={() => scrollToSection('contact')}
               >
-                Get in Touch
+                {t.hero.getInTouch}
               </Button>
             </div>
           </div>
@@ -96,10 +128,10 @@ const Index = () => {
       <section id="projects" className="py-20 px-6">
         <div className="container mx-auto">
           <h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Projects
+            {t.projects.title}
           </h2>
           <p className="text-center text-muted-foreground mb-16 text-lg">
-            Web applications built with modern technologies
+            {t.projects.subtitle}
           </p>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {projects.map((project, index) => (
@@ -127,10 +159,10 @@ const Index = () => {
       <section id="games" className="py-20 px-6 bg-card/30">
         <div className="container mx-auto">
           <h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">
-            Games
+            {t.games.title}
           </h2>
           <p className="text-center text-muted-foreground mb-16 text-lg">
-            Interactive gaming experiences on Roblox
+            {t.games.subtitle}
           </p>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {games.map((game, index) => (
@@ -158,10 +190,10 @@ const Index = () => {
       <section id="contact" className="py-20 px-6">
         <div className="container mx-auto max-w-3xl text-center">
           <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">
-            Let's Connect
+            {t.contact.title}
           </h2>
           <p className="text-muted-foreground mb-12 text-lg">
-            Get in touch through my social channels
+            {t.contact.subtitle}
           </p>
           <div className="flex gap-6 justify-center flex-wrap">
             <Button 
@@ -171,7 +203,7 @@ const Index = () => {
             >
               <a href="https://t.me/sky9line" target="_blank" rel="noopener noreferrer">
                 <Icon name="Send" size={24} />
-                Telegram
+                {t.contact.telegram}
               </a>
             </Button>
             <Button 
@@ -181,7 +213,7 @@ const Index = () => {
             >
               <a href="https://www.roblox.com/users/8401129765/profile" target="_blank" rel="noopener noreferrer">
                 <Icon name="Gamepad2" size={24} />
-                Roblox
+                {t.contact.roblox}
               </a>
             </Button>
           </div>
@@ -190,7 +222,7 @@ const Index = () => {
 
       <footer className="py-8 px-6 border-t border-border">
         <div className="container mx-auto text-center text-muted-foreground">
-          <p>© 2025 a1rblake. All rights reserved.</p>
+          <p>{t.footer.rights}</p>
         </div>
       </footer>
     </div>
