@@ -179,7 +179,7 @@ const Index = () => {
               className="bg-gradient-to-r from-accent to-accent/80 hover:opacity-90 transition-opacity gap-2 text-lg px-8"
               asChild
             >
-              <a href="https://www.roblox.com/users/@kiwiq_0010" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.roblox.com/users/8401129765/profile" target="_blank" rel="noopener noreferrer">
                 <Icon name="Gamepad2" size={24} />
                 Roblox
               </a>
