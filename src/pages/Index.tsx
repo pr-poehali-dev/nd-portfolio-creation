@@ -39,7 +39,7 @@ const Index = () => {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <h2 className="text-2xl font-bold bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
-              ND
+              a1rblake
             </h2>
             <div className="hidden md:flex gap-8">
               <button onClick={() => scrollToSection('home')} className="text-foreground/80 hover:text-primary transition-colors">
@@ -64,7 +64,7 @@ const Index = () => {
         <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent leading-tight">
-              Nikolay Demidov
+              a1rblake
             </h1>
             <p className="text-2xl md:text-3xl text-muted-foreground mb-8 font-light">
               Game & Web Developer
@@ -190,7 +190,7 @@ const Index = () => {
 
       <footer className="py-8 px-6 border-t border-border">
         <div className="container mx-auto text-center text-muted-foreground">
-          <p>© 2025 Nikolay Demidov. All rights reserved.</p>
+          <p>© 2025 a1rblake. All rights reserved.</p>
         </div>
       </footer>
     </div>
