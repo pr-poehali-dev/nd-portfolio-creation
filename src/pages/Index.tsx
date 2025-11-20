@@ -11,12 +11,12 @@ const Index = () => {
     {
       title: "Interactive Web Apps",
       description: "Building responsive and dynamic web applications with modern technologies",
-      image: "https://cdn.poehali.dev/projects/92f641b0-c8dd-4721-9949-45c8af8e6964/files/58b33fe0-2e98-4fbb-b2e3-d6a8669f5501.jpg"
+      image: "https://cdn.poehali.dev/files/3a43aa8f-12ab-4429-8db8-652a7b64cd2a.png"
     },
     {
       title: "Custom Solutions",
       description: "Tailored web solutions for businesses and creative projects",
-      image: "https://cdn.poehali.dev/projects/92f641b0-c8dd-4721-9949-45c8af8e6964/files/58b33fe0-2e98-4fbb-b2e3-d6a8669f5501.jpg"
+      image: "https://cdn.poehali.dev/files/3a43aa8f-12ab-4429-8db8-652a7b64cd2a.png"
     }
   ];
 
